@@ -12,7 +12,7 @@
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="mesh type" type="string" value="read mesh file" />
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="../../data/slope_medium.exo" />
+        <Parameter name="file" type="string" value="../../data/medium_16m_extension.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
     </ParameterList>
@@ -36,7 +36,7 @@
     <ParameterList name="subsurface domain mineral" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="../../data/slope_medium.exo" />
+        <Parameter name="file" type="string" value="../../data/medium_16m_extension.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -49,20 +49,26 @@
     </ParameterList>
     <ParameterList name="east" type="ParameterList">
       <ParameterList name="region: plane" type="ParameterList">
-        <Parameter name="point" type="Array(double)" value="{50.0,0.0,0.0}" />
+        <Parameter name="point" type="Array(double)" value="{66.0,0.0,0.0}" />
+        <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="east subsurface" type="ParameterList">
+      <ParameterList name="region: plane" type="ParameterList">
+        <Parameter name="point" type="Array(double)" value="{66.0,0.0,0.0}" />
         <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="box up" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{1.9,0.0,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{4.1,1.0,-30.0}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{0.9,0.0,20.0}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{1.1,1.0,-30.0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="box down" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{45.9,0.0,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{48.1,1.0,-30.0}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{48.9,0.0,10.0}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{49.1,1.0,-30.0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="box up surface" type="ParameterList">
@@ -91,14 +97,14 @@
     </ParameterList>
     <ParameterList name="CV up" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{1.95,0.0,4.29}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{4.05,1.0,3.79}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{0.95,0.0,4.685}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{1.05,1.0,4.215}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="CV down" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{45.95,0.0,-4.49}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{48.05,1.0,-4.99}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{48.95,0.0,-4.915}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{49.05,1.0,-5.385}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="10cm depth" type="ParameterList">
@@ -131,70 +137,10 @@
         <Parameter name="normal" type="Array(double)" value="{1.0,0.0,5.0}" />
       </ParameterList>
     </ParameterList>
-    <ParameterList name="20cm depth downhill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{20cm depth, downhill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="20cm depth uphill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{20cm depth, uphill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="40cm depth downhill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{40cm depth, downhill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="40cm depth uphill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{40cm depth, uphill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="100cm depth downhill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{100cm depth, downhill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="100cm depth uphill" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{100cm depth, uphill}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="downhill" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{25.0,0.0,20.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{50.0,1.0,-100.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="uphill" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{0.0,0.0,20.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{25.0,1.0,-100.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="middle" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{20.5,0.0,20.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{21.5,1.0,-100.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="40cm depth middle" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{40cm depth, middle}" />
-      </ParameterList>
-    </ParameterList>
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="../../data/slope_medium.exo" />
+        <Parameter name="file" type="string" value="../../data/medium_16m_extension.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -202,103 +148,79 @@
     <ParameterList name="bottom face" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="../../data/slope_medium.exo" />
+        <Parameter name="file" type="string" value="../../data/medium_16m_extension.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
     </ParameterList>
-    <ParameterList name="CV up surface left" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{1.9,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{2.1,-10.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="CV down surface left" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{39.9,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{40.1,-10.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="CV up surface right" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{3.9,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{4.1,-10.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="CV down surface right" type="ParameterList">
-      <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="high coordinate" type="Array(double)" value="{41.9,10.0}" />
-        <Parameter name="low coordinate" type="Array(double)" value="{42.1,-10.0}" />
-      </ParameterList>
-    </ParameterList>
     <ParameterList name="7.5cm depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,4.525}" />
+        <Parameter name="coordinate" type="Array(double)" value="{0.0,0.0,4.9}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="7.5cm depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-4.675}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.0,0.0,-5.1}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="lowest point surface" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.5,-4.6}" />
+        <Parameter name="coordinate" type="Array(double)" value="{49.0,0.5,-4.8}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="highest point surface" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.5,4.6}" />
+        <Parameter name="coordinate" type="Array(double)" value="{1.0,0.5,4.8}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="10m depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,-5.45}" />
+        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,-5.25}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="10m depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-14.65}" />
+        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-14.85}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="1m depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,3.6}" />
+        <Parameter name="coordinate" type="Array(double)" value="{0.0,0.0,4.0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="1m depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-5.6}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.0,0.0,-6.0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="80cm depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,3.8}" />
+        <Parameter name="coordinate" type="Array(double)" value="{0.0,0.0,4.2}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="80cm depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-5.4}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.0,0.0,-5.8}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="40cm depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,4.2}" />
+        <Parameter name="coordinate" type="Array(double)" value="{0.0,0.0,4.6}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="40cm depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-5.0}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.0,0.0,-5.4}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="20cm depth up" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{2.0,0.0,4.4}" />
+        <Parameter name="coordinate" type="Array(double)" value="{0.0,0.0,4.8}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="20cm depth down" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.0,0.0,-4.8}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.0,0.0,-5.2}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="2m east all" type="ParameterList">
@@ -307,34 +229,16 @@
         <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
       </ParameterList>
     </ParameterList>
+    <ParameterList name="2m east box" type="ParameterList">
+      <ParameterList name="region: box" type="ParameterList">
+        <Parameter name="high coordinate" type="Array(double)" value="{1.95,0.0,4.535}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{2.05,1.0,3.965}" />
+      </ParameterList>
+    </ParameterList>
     <ParameterList name="2m east" type="ParameterList">
       <ParameterList name="region: logical" type="ParameterList">
         <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{box up, 2m east all}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="4m east all" type="ParameterList">
-      <ParameterList name="region: plane" type="ParameterList">
-        <Parameter name="point" type="Array(double)" value="{4.0,0.0,0.0}" />
-        <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="4m east" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{box up, 4m east all}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="46m east all" type="ParameterList">
-      <ParameterList name="region: plane" type="ParameterList">
-        <Parameter name="point" type="Array(double)" value="{46.0,0.0,0.0}" />
-        <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
-      </ParameterList>
-    </ParameterList>
-    <ParameterList name="46m east" type="ParameterList">
-      <ParameterList name="region: logical" type="ParameterList">
-        <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{box down, 46m east all}" />
+        <Parameter name="regions" type="Array(string)" value="{2m east box, 2m east all}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="48m east all" type="ParameterList">
@@ -343,10 +247,16 @@
         <Parameter name="normal" type="Array(double)" value="{1.0,0.0,0.0}" />
       </ParameterList>
     </ParameterList>
+    <ParameterList name="48m east box" type="ParameterList">
+      <ParameterList name="region: box" type="ParameterList">
+        <Parameter name="high coordinate" type="Array(double)" value="{47.95,0.0,-4.665}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{48.05,1.0,-5.235}" />
+      </ParameterList>
+    </ParameterList>
     <ParameterList name="48m east" type="ParameterList">
       <ParameterList name="region: logical" type="ParameterList">
         <Parameter name="operation" type="string" value="intersect" />
-        <Parameter name="regions" type="Array(string)" value="{box down, 48m east all}" />
+        <Parameter name="regions" type="Array(string)" value="{48m east box, 48m east all}" />
       </ParameterList>
     </ParameterList>
   </ParameterList>
@@ -552,31 +462,7 @@
       <Parameter name="observation output filename" type="string" value="box_down_60cm_mass_flux.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="mass flux box up right" type="ParameterList">
-      <Parameter name="variable" type="string" value="mass_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
-      <Parameter name="region" type="string" value="4m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_right_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux box down right" type="ParameterList">
-      <Parameter name="variable" type="string" value="mass_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
-      <Parameter name="region" type="string" value="48m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_right_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux box up left" type="ParameterList">
+    <ParameterList name="mass flux box up lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="mass_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
       <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
@@ -585,59 +471,19 @@
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_left_mass_flux.dat" />
+      <Parameter name="observation output filename" type="string" value="box_up_lateral_mass_flux.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="mass flux box down left" type="ParameterList">
+    <ParameterList name="mass flux box down lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="mass_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
       <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
-      <Parameter name="region" type="string" value="46m east" />
+      <Parameter name="region" type="string" value="48m east" />
       <Parameter name="functional" type="string" value="observation data: extensive integral" />
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_left_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux CV up surface left" type="ParameterList">
-      <Parameter name="variable" type="string" value="surface-mass_flux" />
-      <Parameter name="region" type="string" value="CV up surface left" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_left_surf_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux CV up surface right" type="ParameterList">
-      <Parameter name="variable" type="string" value="surface-mass_flux" />
-      <Parameter name="region" type="string" value="CV up surface right" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_right_surf_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux CV down surface left" type="ParameterList">
-      <Parameter name="variable" type="string" value="surface-mass_flux" />
-      <Parameter name="region" type="string" value="CV down surface left" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_left_surf_mass_flux.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="mass flux CV down surface right" type="ParameterList">
-      <Parameter name="variable" type="string" value="surface-mass_flux" />
-      <Parameter name="region" type="string" value="CV down surface right" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_right_surf_mass_flux.dat" />
+      <Parameter name="observation output filename" type="string" value="box_down_lateral_mass_flux.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
     <ParameterList name="snowdepth downhill" type="ParameterList">
@@ -907,7 +753,7 @@
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="cell" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="temp_04m_up.dat" />
+      <Parameter name="observation output filename" type="string" value="temp_02m_up.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
     <ParameterList name="20cm depth downhill temp" type="ParameterList">
@@ -917,7 +763,7 @@
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="cell" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="temp_04m_down.dat" />
+      <Parameter name="observation output filename" type="string" value="temp_02m_down.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
     <ParameterList name="20cm depth downhill tc" type="ParameterList">
@@ -1140,100 +986,52 @@
       <Parameter name="observation output filename" type="string" value="tc_080m_up.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="diff energy box up right" type="ParameterList">
+    <ParameterList name="diff energy box up lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="diffusive_energy_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
-      <Parameter name="region" type="string" value="4m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_right_diff_energy.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="diff energy box down right" type="ParameterList">
-      <Parameter name="variable" type="string" value="diffusive_energy_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
-      <Parameter name="region" type="string" value="48m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_right_diff_energy.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="diff energy box up left" type="ParameterList">
-      <Parameter name="variable" type="string" value="diffusive_energy_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
+      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
       <Parameter name="region" type="string" value="2m east" />
       <Parameter name="functional" type="string" value="observation data: extensive integral" />
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_left_diff_energy.dat" />
+      <Parameter name="observation output filename" type="string" value="box_up_lateral_diff_energy.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="diff energy box down left" type="ParameterList">
+    <ParameterList name="diff energy box down lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="diffusive_energy_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
-      <Parameter name="region" type="string" value="46m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_left_diff_energy.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="adv energy box up right" type="ParameterList">
-      <Parameter name="variable" type="string" value="advected_energy_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
-      <Parameter name="region" type="string" value="4m east" />
-      <Parameter name="functional" type="string" value="observation data: extensive integral" />
-      <Parameter name="delimiter" type="string" value=" " />
-      <Parameter name="location name" type="string" value="face" />
-      <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_right_adv_energy.dat" />
-      <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
-    </ParameterList>
-    <ParameterList name="adv energy box down right" type="ParameterList">
-      <Parameter name="variable" type="string" value="advected_energy_flux" />
-      <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
+      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
       <Parameter name="region" type="string" value="48m east" />
       <Parameter name="functional" type="string" value="observation data: extensive integral" />
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_right_adv_energy.dat" />
+      <Parameter name="observation output filename" type="string" value="box_down_lateral_diff_energy.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="adv energy box up left" type="ParameterList">
+    <ParameterList name="adv energy box up lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="advected_energy_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
+      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
       <Parameter name="region" type="string" value="2m east" />
       <Parameter name="functional" type="string" value="observation data: extensive integral" />
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_up_left_adv_energy.dat" />
+      <Parameter name="observation output filename" type="string" value="box_up_lateral_adv_energy.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
-    <ParameterList name="adv energy box down left" type="ParameterList">
+    <ParameterList name="adv energy box down lateral" type="ParameterList">
       <Parameter name="variable" type="string" value="advected_energy_flux" />
       <Parameter name="direction normalized flux" type="bool" value="true" />
-      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,-0.2}" />
-      <Parameter name="region" type="string" value="46m east" />
+      <Parameter name="direction normalized flux direction" type="Array(double)" value="{1.0,0.0,0.0}" />
+      <Parameter name="region" type="string" value="48m east" />
       <Parameter name="functional" type="string" value="observation data: extensive integral" />
       <Parameter name="delimiter" type="string" value=" " />
       <Parameter name="location name" type="string" value="face" />
       <Parameter name="write interval" type="int" value="1" />
-      <Parameter name="observation output filename" type="string" value="box_down_left_adv_energy.dat" />
+      <Parameter name="observation output filename" type="string" value="box_down_lateral_adv_energy.dat" />
       <Parameter name="times start period stop" type="Array(double)" value="{0.0,86400.0,-1.0}" />
     </ParameterList>
   </ParameterList>
@@ -1437,16 +1235,6 @@
       </ParameterList>
 
       <ParameterList name="boundary conditions" type="ParameterList">
-        <ParameterList name="seepage face head" type="ParameterList">
-          <ParameterList name="surface boundary" type="ParameterList">
-            <Parameter name="regions" type="Array(string)" value="{east,west}" />
-            <ParameterList name="boundary head" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.3" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
@@ -1509,8 +1297,8 @@
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W/(m-K)]" type="double" value="1.0" />
-            <Parameter name="thermal conductivity, dry [W/(m-K)]" type="double" value="0.29" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W/(m-K)]" type="double" value="1.7" />
+            <Parameter name="thermal conductivity, dry [W/(m-K)]" type="double" value="0.27" />
             <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.0" />
             <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.5" />
           </ParameterList>
@@ -1545,16 +1333,6 @@
       </ParameterList>
 
       <ParameterList name="boundary conditions" type="ParameterList">
-        <ParameterList name="diffusive flux" type="ParameterList">
-          <ParameterList name="outlet" type="ParameterList">
-            <Parameter name="regions" type="Array(string)" value="{east,west}" />
-            <ParameterList name="outward diffusive flux" type="ParameterList">
-              <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.0" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
@@ -2044,24 +1822,18 @@
   <ParameterList name="visualization" type="ParameterList">
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="file name base" type="string" value="visdump" />
-      <Parameter name="times start period stop 0" type="Array(double)" value="{0.587,10.0,-1.0}" />
-      <Parameter name="times start period stop 0 units" type="string" value="noleap" />
-      <Parameter name="times start period stop 1" type="Array(double)" value="{36135.0,7.0,-1.0}" />
-      <Parameter name="times start period stop 1 units" type="string" value="d" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{36136.0,1.0,-1.0}" />
+      <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
       <Parameter name="file name base" type="string" value="visdump_surface" />
-      <Parameter name="times start period stop 0" type="Array(double)" value="{0.587,10.0,-1.0}" />
-      <Parameter name="times start period stop 0 units" type="string" value="noleap" />
-      <Parameter name="times start period stop 1" type="Array(double)" value="{36135.0,7.0,-1.0}" />
-      <Parameter name="times start period stop 1 units" type="string" value="d" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{36136.0,1.0,-1.0}" />
+      <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="snow" type="ParameterList">
       <Parameter name="file name base" type="string" value="visdump_snow" />
-      <Parameter name="times start period stop 0" type="Array(double)" value="{0.587,10.0,-1.0}" />
-      <Parameter name="times start period stop 0 units" type="string" value="noleap" />
-      <Parameter name="times start period stop 1" type="Array(double)" value="{36135.0,7.0,-1.0}" />
-      <Parameter name="times start period stop 1 units" type="string" value="d" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{36136.0,1.0,-1.0}" />
+      <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
   </ParameterList>
 
